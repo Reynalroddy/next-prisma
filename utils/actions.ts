@@ -61,7 +61,7 @@ export const deleteTask = async (formData:FormData) => {
     if (id !== null && typeof id === 'string' && content !== null && typeof content === 'string'){
     await prisma.task.update({
       where: {
-        id,
+        id:id,
       },
       data: {
         content,
@@ -80,7 +80,7 @@ export const deleteTask = async (formData:FormData) => {
   export const getTask = async (id:string) => {
     return prisma.task.findUnique({
       where: {
-        id,
+        id:id,
       },
     });
   };
